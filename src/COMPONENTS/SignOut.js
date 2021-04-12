@@ -6,7 +6,10 @@ export default function SignOut() {
   return (
     <div>
       {auth.currentUser && (
-        <button className="sign-out" onClick={() => auth.signOut()}>
+        <button
+          className="text-2xl font-semibold bg-green-700 h-12 px-4 text-white hover:bg-green-600 hover:text-green-900 transition-all duration-300"
+          onClick={() => auth.signOut()}
+        >
           Sign Out
         </button>
       )}

@@ -31,17 +31,23 @@ export default function ChatRoom() {
   };
 
   return (
-    <main>
+    <main className="pt-4">
       {messages &&
         messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
       <span ref={scrollBottom}></span>
-      <form>
+      <form className="sticky left-0 bottom-0 w-full flex">
         <input
           placeholder="Write a message..."
           value={formValue}
           onChange={(e) => setFormValue(e.target.value)}
+          className="w-4/5 px-2 h-12 text-lg focus:outline-none text-gray-600 font-semibold"
         />
-        <button type="submit" disabled={!formValue} onClick={sendMessage}>
+        <button
+          type="submit"
+          disabled={!formValue}
+          onClick={sendMessage}
+          className="text-center bg-green-600 w-1/5 font-semibold text-xl"
+        >
           Send
         </button>
       </form>
